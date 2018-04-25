@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击发送短信">
+    <script>
+    var btn = document.querySelector("input");
+    btn.onclick = function () {
+        var count = 5;
+        btn.disabled = true;
+        var timeId = setInterval(function () {
+            count--;
+            btn.value = count + "秒后再次发送";
+            if (count == 0) {
+                clearInterval = (timeId);
+                btn.disabled = false;
+                btn.value = "点击发送短信";
+            }
+        },1000)
+    }
+    </script>
+</body>
+</html>
